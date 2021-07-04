@@ -25,3 +25,6 @@ const multiplyHundred = function(num) {
 const multipliedByHundred3 = numbers.map(multiplyHundred);
 
 console.log(multipliedByHundred3, `<-------- with callback function declared outside map method`)
+
+
+console.log(numbers, `<------- original array, checked if it has been mutated`);
