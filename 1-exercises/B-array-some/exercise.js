@@ -18,9 +18,8 @@ const mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
 const pairs = pairsByIndex.map(function (indexes) {
   const student = students[indexes[0]];
   const mentor = mentors[indexes[1]];
-  const isNull = element => element === null;  // check if the element is null 
-  const containsNull = pairsByIndex.some(isNull);  // check if there is any null element in pairsByIndex and store the boolean value in containsNull
-  if(containsNull === true) { // if there is null (containNull is true) process.exit; otherwise return [student, mentor]
+  const containsNull = pairsByIndex.some(element => element === null);  // check if there is any null element in pairsByIndex and store the returned boolean value in containsNull
+  if(containsNull) { // if there is null (containNull is true) process.exit; otherwise return [student, mentor]
     console.log("Something went wrong");
     process.exit(1);
   }
