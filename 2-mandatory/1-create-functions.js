@@ -30,7 +30,7 @@ Write a function that:
 - Makes the strings all lowercase.
 */
 function tidyUpString(array) {
-  return array.map(x => x.trim()).map(x => x.replace("/", "")).map(x => x.toLowerCase());
+  return array.map(x => x.trim().replace("/", "").toLowerCase());
 }
 
 /*
