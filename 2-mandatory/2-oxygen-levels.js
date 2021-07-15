@@ -18,7 +18,10 @@ function findSafeOxygenLevel(oxygenLevelsArray) {
   const toNumber = oxygenLevelsArray.map(element => {
     return element.includes('%') ? parseFloat(element) / 100.0 : parseFloat(element);
   });  // turn the array of strings into array of numbers, check if there is %, if there is divide it by 100 
-  const firstPlanet = toNumber.find(element => element > 0.1950 && element < 0.2350); // find first oxygen level in the array matches the criteria
+  const filteredOxygenLevels = toNumber.filter((x) => x !== NaN);
+  const firstPlanet = filteredOxygenLevels.find(
+    (element) => element > 0.195 && element < 0.235
+  ); // find first oxygen level in the array matches the criteria
   const index = toNumber.indexOf(firstPlanet);  // find the index of the first planet
   return oxygenLevelsArray[index];
 }
