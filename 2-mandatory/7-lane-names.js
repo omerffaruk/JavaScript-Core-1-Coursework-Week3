@@ -7,7 +7,7 @@
 */
 
 function getLanes(streetNamesArr) {
-  const laneStreets = streetNamesArr.filter(element => element.includes('Lane'));
+  const laneStreets = streetNamesArr.filter(element => element.toLowerCase().includes('lane'));
   return laneStreets;
 }
 
